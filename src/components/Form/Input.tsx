@@ -2,13 +2,13 @@ import { ComponentProps } from 'react'
 
 type InputPrefixProps = ComponentProps<'div'>
 
-function InputPrefix(props: InputPrefixProps) {
+function Prefix(props: InputPrefixProps) {
   return <div {...props} />
 }
 
 type InputControlProps = ComponentProps<'input'>
 
-function InputControl(props: InputControlProps) {
+function Control(props: InputControlProps) {
   return (
     <input
       className="flex-1 border-0 bg-transparent p-0 text-zinc-900 placeholder-zinc-600"
@@ -19,7 +19,7 @@ function InputControl(props: InputControlProps) {
 
 type InputRootProps = ComponentProps<'div'>
 
-function InputRoot(props: InputRootProps) {
+function Root(props: InputRootProps) {
   return (
     <div
       className="flex w-full items-center gap-2 rounded-lg border boder-zinc-300 px-3 py-2 shadow-sm"
@@ -29,7 +29,7 @@ function InputRoot(props: InputRootProps) {
 }
 
 export const Input = {
-  Prefix: InputPrefix,
-  Control: InputControl,
-  Root: InputRoot,
+  Prefix,
+  Control,
+  Root,
 }
