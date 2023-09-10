@@ -61,22 +61,22 @@ export function FileItem({ state, file }: FileItemProps) {
       ) : (
         <div className="flex flex-col flex-1 items-start gap-1">
           <div className="flex flex-col">
-            <span className="text-sm font-medium text-zinc-700 truncate block">
+            <span className="text-sm font-medium text-zinc-700 dark:text-zinc-300 whitespace-pre-wrap">
               {file.name}
             </span>
-            <span className="text-sm font-medium text-zinc-500">
+            <span className="text-sm font-medium text-zinc-500 dark:text-zinc-400">
               {formatBytes(file.size)}
             </span>
           </div>
 
           <div className="flex w-full items-center gap-3">
-            <div className="h-2 flex-1 rounded-full bg-zinc-100">
+            <div className="h-2 flex-1 rounded-full bg-zinc-100 dark:bg-zinc-600">
               <div
-                className="h-2 rounded-full bg-violet-600"
+                className="h-2 rounded-full bg-violet-600 dark:bg-violet-300"
                 style={{ width: state === 'complete' ? '100%' : '80%' }}
               />
             </div>
-            <span className="text-sm font-medium text-zinc-700">
+            <span className="text-sm font-medium text-zinc-700 dark:text-zinc-400">
               {state === 'complete' ? '100%' : '80%'}
             </span>
           </div>

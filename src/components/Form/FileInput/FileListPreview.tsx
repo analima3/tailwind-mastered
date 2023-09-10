@@ -11,7 +11,7 @@ export function FileListPreview() {
   return (
     <div ref={parent} className="mt-4 space-y-3">
       {files.map((file: File) => (
-        <FileItem key={file.name} file={file} state="error" />
+        <FileItem key={file.name} file={file} state="progress" />
       ))}
     </div>
   )
