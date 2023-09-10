@@ -1,3 +1,5 @@
+import { Button } from '../Button'
+
 export function UsedSpaceWidget() {
   return (
     <div className="flex flex-col gap-4 rounded-lg bg-violet-50 px-4 py-5">
@@ -13,18 +15,12 @@ export function UsedSpaceWidget() {
       </div>
 
       <div className="space-x-3">
-        <button
-          type="button"
-          className="text-sm font-semibold text-violet-500 hover:text-violet-700"
-        >
+        <Button type="button" variant="ghost">
           Dismiss
-        </button>
-        <button
-          type="button"
-          className="text-sm font-semibold text-violet-700 hover:text-violet-900"
-        >
+        </Button>
+        <Button type="button" variant="ghost">
           Upgrade plan
-        </button>
+        </Button>
       </div>
     </div>
   )
