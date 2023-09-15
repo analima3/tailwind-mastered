@@ -2,6 +2,7 @@ import { Button } from '@/components/Button'
 import { CheckCircle2, Image as ImageIcon, Trash2 } from 'lucide-react'
 import { useMemo } from 'react'
 import { tv, VariantProps } from 'tailwind-variants'
+import { useFileInput } from './Root'
 
 const fileItem = tv({
   slots: {
@@ -35,6 +36,7 @@ interface FileItemProps extends VariantProps<typeof fileItem> {
 }
 
 export function FileItem({ state, file }: FileItemProps) {
+  const { onDeleteFile } = useFileInput()
   const uploadProgress = state === 'complete' ? '100%' : '25%'
 
   const fileSize = useMemo(() => {
@@ -63,7 +65,7 @@ export function FileItem({ state, file }: FileItemProps) {
             <span className="text-sm font-medium text-error-700 dark:text-error-400">
               Upload failed, please try again
             </span>
-            <span className="text-sm text-error-600 dark:text-error-500">
+            <span className="text-sm text-error-600 dark:text-error-500 break-all">
               {file.name}
             </span>
           </div>
@@ -78,7 +80,7 @@ export function FileItem({ state, file }: FileItemProps) {
       ) : (
         <div className="flex flex-1 flex-col items-start gap-1">
           <div className="flex flex-col leading-relaxed">
-            <span className="text-sm font-medium text-zinc-700 dark:text-zinc-100">
+            <span className="text-sm font-medium text-zinc-700 dark:text-zinc-100 break-all">
               {file.name}
             </span>
             <span className="text-sm text-zinc-500 dark:text-zinc-400">
@@ -103,7 +105,12 @@ export function FileItem({ state, file }: FileItemProps) {
       {state === 'complete' ? (
         <CheckCircle2 className="h-5 w-5 fill-violet-600 text-white dark:fill-violet-300 dark:text-zinc-900" />
       ) : (
-        <Button type="button" variant="ghost" className={deleteButton()}>
+        <Button
+          type="button"
+          variant="ghost"
+          className={deleteButton()}
+          onClick={() => onDeleteFile(file.name)}
+        >
           <Trash2 className="h-5 w-5" />
         </Button>
       )}

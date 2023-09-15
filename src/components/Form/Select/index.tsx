@@ -15,11 +15,14 @@ export function Select({ children, placeholder, ...props }: SelectProps) {
     <SelectPrimitive.Root {...props}>
       <SelectPrimitive.Trigger
         className={twMerge(
-          'h-11 flex w-full items-center justify-between gap-2 rounded-lg border border-zinc-300 px-3 py-2 shadow-sm data-[placeholder]:text-zinc-600 outline-none focus:border-violet-300 focus:ring-4 focus:ring-violet-100',
+          'h-11 flex w-full items-center justify-between gap-2 rounded-lg border border-zinc-300 px-3 py-2 shadow-sm data-[placeholder]:text-zinc-600 outline-none',
+          'focus:border-violet-300 focus:ring-4 focus:ring-violet-100',
           'dark:border-zinc-700 dark:bg-zinc-800 dark:focus-within:border-violet-500 dark:focus-within:ring-violet-500/20 dark:data-[placeholder]:text-zinc-400 dark:text-zinc-100',
         )}
       >
-        <SelectPrimitive.Value placeholder={placeholder} />
+        <span className="truncate">
+          <SelectPrimitive.Value placeholder={placeholder} />
+        </span>
         <SelectPrimitive.Icon>
           <ChevronDown className="w-5 h-5 text-zinc-500 dark:text-zinc-600" />
         </SelectPrimitive.Icon>

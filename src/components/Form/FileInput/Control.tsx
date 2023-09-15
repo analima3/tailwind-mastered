@@ -22,8 +22,8 @@ export function Control({ multiple = false, ...props }: ControlProps) {
 
   return (
     <input
-      type="file"
       id={id}
+      type="file"
       className="sr-only"
       onChange={handleFilesSelected}
       multiple={multiple}

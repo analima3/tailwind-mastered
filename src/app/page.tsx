@@ -105,7 +105,7 @@ export default function Home() {
             <FileInput.Root className="flex flex-col lg:flex-row lg:items-start gap-5">
               <FileInput.ImagePreview />
               <FileInput.Trigger />
-              <FileInput.Control />
+              <FileInput.Control accept="image/png, image/jpeg" />
             </FileInput.Root>
           </div>
 
@@ -215,7 +215,10 @@ export default function Home() {
 
             <FileInput.Root>
               <FileInput.Trigger />
-              <FileInput.Control multiple />
+              <FileInput.Control
+                multiple
+                accept="text/plain, application/pdf"
+              />
 
               <FileInput.FileListPreview />
             </FileInput.Root>
